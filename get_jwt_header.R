@@ -18,7 +18,7 @@ user_email <- shiny::reactive({
     
     print(paste0("User email: ", tolower(payload$email)))
     return(tolower(payload$email))
-  } else if (is.null(encoded_jwt) & interactive()) {
+  } else if (is.null(encoded_jwt) && interactive()) {
     print(paste0("Local user email obtained from `GARGLE_EMAIL` (env var): ", Sys.getenv("GARGLE_EMAIL")))
     return(Sys.getenv("GARGLE_EMAIL"))
   } else {
